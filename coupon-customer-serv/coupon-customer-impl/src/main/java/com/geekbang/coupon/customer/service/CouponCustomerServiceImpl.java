@@ -96,6 +96,7 @@ public class CouponCustomerServiceImpl implements CouponCustomerService {
         Map<Long, CouponTemplateInfo> templateMap = templateService.getTemplateInfoMap(templateIds);
         coupons.stream().forEach(e -> e.setTemplateInfo(templateMap.get(e.getTemplateId())));
 
+
         return coupons.stream()
                 .map(CouponConverter::convertToCoupon)
                 .collect(Collectors.toList());
